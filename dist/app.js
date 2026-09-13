@@ -15,9 +15,16 @@ function path(id){let parts=[],p=pages[id];while(p){parts.unshift([id,p.short||p
 function heading(p,id){return `<div class="slide-heading" data-node="hub"><div><span class="micro">${esc(p.sub)}</span><h1 tabindex="-1">${esc(p.short||p.title)}</h1></div><span class="heading-index" aria-hidden="true">${pad(pageIds.indexOf(id)+1)}<small>/ ZX</small></span></div>`;}
 function wrapper(id,body,footer=''){return `<section class="slide slide-${pages[id].kind||'project'}">${path(id)}${heading(pages[id],id)}${body}<div class="slide-bottom">${footer||bottom(id)}</div></section>`;}
 function bottom(id){const p=pages[id],siblings=pages[p.parent]?.children||[],i=siblings.indexOf(id),next=i>=0?siblings[i+1]:null;return `<a class="back-link" href="#${p.parent}"><span>↖</span> ${p.parent==='home'?'ORIGIN':esc(pages[p.parent]?.title)}</a>${p.related?`<a class="connection-link" href="#${p.related}"><span class="micro">CONNECTED</span>${esc(pages[p.related].short||pages[p.related].title)} <span>↗</span></a>`:next?`<a class="connection-link" href="#${next}"><span class="micro">NEXT</span>${esc(pages[next].title)} <span>→</span></a>`:'<span class="micro footer-coordinate">ZX / PERSONAL ARCHIVE</span>'}`;}
-function firstImage(p){return p.image||p.images?.[0]||(p.kind==='video'?`assets/${p.id}.jpg`:null);}
-function branch(id){const p=pages[id];return wrapper(id,`<div class="branch-space ${id==='career'?'career-sequence':''}"><div class="branch-cards count-${p.children.length}">${p.children.map((key,i)=>{const n=pages[key],image=firstImage(n);return `<a class="branch-card panel" href="#${key}" data-node="${key}"><div class="panel-code"><span>${pad(i+1)} / ${n.kind==='branch'?'DIRECTION':p.parent==='home'&&id==='career'?'EXPERIENCE':'PROJECT'}</span><span>↗</span></div><div class="branch-visual">${image?`<img src="${image}" alt="${esc(n.captions?.[0]||n.title)}">`:`<div class="abstract-node"><span class="giant-index">${pad(i+1)}</span>${icon(id==='career'?1:2)}</div>`}${n.status?`<span class="status">${n.status}</span>`:''}</div><div class="branch-label"><h2>${esc(n.title)}</h2><p>${esc(n.sub)}</p></div><div class="node-terminal" aria-hidden="true"><span>+</span><i></i><span>⌁</span></div></a>`;}).join('')}</div></div>`);}
-function mediaItems(p){return [...(p.images||[p.image].filter(Boolean)).map((src,i)=>({src,title:p.captions?.[i]||p.title,source:p.mediaSources?.[i]||(i===0?p.source:null)})),...(p.pendingMedia||[])];}
+function firstImage(p){return p.cover||p.image||p.images?.[0]||(p.kind==='video'?`assets/${p.id}.jpg`:null);}
+function spreadLayout(count,width,height){
+ const mobile=width<650,ratio=mobile?1.42:1.72;
+ const w=Math.min(width*(mobile?.44:.40),height*ratio*.37,410),h=w/ratio;
+ const anchors=count===3?[[.25,.26,-3.7],[.74,.33,3],[.50,.75,-1.8]]:[[.24,.26,-3.8],[.75,.32,2.8],[.27,.76,2.2],[.74,.75,-3.2]];
+ const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+ return anchors.slice(0,count).map(([x,y,angle])=>({x:clamp(x*width,w*.62,width-w*.62),y:clamp(y*height,h*.67,height-h*.67),w,h,angle}));
+}
+function branch(id){const p=pages[id];return wrapper(id,`<div class="branch-space spread-space"><div class="branch-cards card-spread count-${p.children.length}">${p.children.map((key,i)=>{const n=pages[key],image=firstImage(n);return `<a class="branch-card panel" href="#${key}" data-node="${key}"><div class="panel-code"><span>${pad(i+1)} / ${n.kind==='branch'?'DIRECTION':p.parent==='home'&&id==='career'?'EXPERIENCE':'PROJECT'}</span><span>↗</span></div><div class="branch-visual">${image?`<img src="${image}" alt="${esc(n.captions?.[0]||n.title)}">`:`<div class="abstract-node"><span class="giant-index">${pad(i+1)}</span>${icon(id==='career'?1:2)}</div>`}${n.status?`<span class="status">${n.status}</span>`:''}</div><div class="branch-label"><h2>${esc(n.title)}</h2><p>${esc(n.sub)}</p></div><div class="node-terminal" aria-hidden="true"><span>+</span><i></i><span>⌁</span></div></a>`;}).join('')}</div></div>`);}
+function mediaItems(p){return [...(p.images||[p.image].filter(Boolean)).map((src,i)=>({src,title:p.captions?.[i]||p.title,sub:p.mediaSubtitles?.[i],source:p.mediaSources?.[i]||(i===0?p.source:null)})),...(p.pendingMedia||[])];}
 function photoPane(p){
  const items=mediaItems(p),item=items[mediaIndex];
  return `<div class="media-panel panel"><div class="panel-code"><span>${p.status||'VISUAL ARCHIVE'}</span><span>${items.length?`${pad(mediaIndex+1)} / ${pad(items.length)}`:'AWAITING IMAGES'}</span></div><div class="media-screen">${item?.src?`<button class="image-open" data-src="${item.src}" data-caption="${esc(item.title)}" aria-label="Enlarge ${esc(item.title)}"><img src="${item.src}" alt="${esc(item.title)}"><span class="enlarge">EXPAND ↗</span></button>`:`<div class="media-empty"><span class="empty-symbol" aria-hidden="true">[ + ]</span>${item?`<span class="micro">${item.year||''} / SPATIAL DESIGN</span><strong>${esc(item.title)}</strong><span>${esc(item.sub)}</span><small>Photo to add</small>`:`<span>${esc(p.mediaPlaceholder||'Images to add')}</span>`}</div>`}</div><div class="media-caption"><span>${esc(item?.title||p.title)}${item?.sub?`<small>${esc(item.sub)}</small>`:''}</span>${item?.source?`<a href="${item.source.url}" target="_blank" rel="noopener">SOURCE ↗</a>`:''}</div>${items.length>1?`<div class="image-strip"><button data-image-step="-1" aria-label="Previous image">←</button><div class="image-thumbs">${items.map((item,i)=>`<button class="image-thumb ${i===mediaIndex?'active':''} ${item.src?'':'pending-thumb'}" data-image-index="${i}" aria-label="Image ${i+1}: ${esc(item.title)}" aria-pressed="${i===mediaIndex}">${item.src?`<img src="${item.src}" alt="">`:'<b aria-hidden="true">+</b>'}<span>${pad(i+1)}</span></button>`).join('')}</div><button data-image-step="1" aria-label="Next image">→</button></div>`:''}</div>`;
@@ -49,7 +56,30 @@ function setupMap(){fitMap();const surface=$('.map-view');let points=new Map(),d
  const end=e=>{points.delete(e.pointerId);drag=null;};surface.addEventListener('pointerup',end);surface.addEventListener('pointercancel',end);surface.addEventListener('click',e=>{if(moved&&!e.target.closest('.map-controls')){e.preventDefault();moved=false;}},true);
 }
 const modal=document.createElement('dialog');modal.className='lightbox';modal.setAttribute('aria-label','Image viewer');modal.innerHTML='<button class="close-lightbox" aria-label="Close image">CLOSE ×</button><figure><img alt=""><figcaption></figcaption></figure>';document.body.append(modal);modal.querySelector('button').onclick=()=>modal.close();modal.onclick=e=>{if(e.target===modal)modal.close();};
-function render(){if(current==='map'){overview();return;}const id=current;scene.innerHTML=id==='home'?home():id==='about'?about():id==='content'?content():pages[id].kind==='branch'?branch(id):pages[id].kind==='video'?video(id):project(id);}
+let spreadObserver;
+function mountSpread(){
+ const spread=scene.querySelector('.card-spread');if(!spread)return;
+ const cards=[...spread.querySelectorAll('.branch-card')];let positions=[],pointer=-1,focus=-1;
+ const move=()=>{
+  const active=pointer>=0?pointer:focus,target=positions[active];
+  cards.forEach((el,i)=>{
+   const p=positions[i];if(!p)return;let dx=0,dy=0;
+   if(target&&i!==active){const vx=p.x-target.x,vy=p.y-target.y,length=Math.hypot(vx,vy)||1,shift=Math.min(30,p.w*.09);dx=vx/length*shift;dy=vy/length*shift;}
+   el.style.setProperty('--push-x',dx+'px');el.style.setProperty('--push-y',dy+'px');
+   el.classList.toggle('card-active',i===active);el.classList.toggle('card-neighbour',active>=0&&i!==active);
+  });
+ };
+ const layout=()=>{
+  positions=spreadLayout(cards.length,spread.clientWidth,spread.clientHeight);
+  cards.forEach((el,i)=>{const p=positions[i];el.style.left=p.x+'px';el.style.top=p.y+'px';el.style.setProperty('--card-w',p.w+'px');el.style.setProperty('--card-h',p.h+'px');el.style.setProperty('--card-angle',p.angle+'deg');});move();
+ };
+ spread.addEventListener('pointerover',e=>{const el=e.target.closest('.branch-card');if(el){pointer=cards.indexOf(el);move();}});
+ spread.addEventListener('pointerout',e=>{const el=e.target.closest('.branch-card');if(el&&!el.contains(e.relatedTarget)){pointer=-1;move();}});
+ spread.addEventListener('focusin',e=>{focus=cards.indexOf(e.target.closest('.branch-card'));move();});
+ spread.addEventListener('focusout',()=>{focus=-1;move();});
+ layout();spreadObserver=new ResizeObserver(layout);spreadObserver.observe(spread);
+}
+function render(){spreadObserver?.disconnect();if(current==='map'){overview();return;}const id=current;scene.innerHTML=id==='home'?home():id==='about'?about():id==='content'?content():pages[id].kind==='branch'?branch(id):pages[id].kind==='video'?video(id):project(id);mountSpread();}
 function updateMedia(){const p=pages[current],items=mediaItems(p);if(!items.length)return;mediaIndex=(mediaIndex+items.length)%items.length;const active=scene.querySelector('.media-panel');active.outerHTML=photoPane(p);}
 function chooseNote(index,focus=false){const p=current==='about'?{...pages.about,prompts:['About me']}:pages[current];noteIndex=index;scene.querySelector('.note-panel').outerHTML=notes(p,p.prompts);if(focus)scene.querySelector(`[data-note="${index}"]`).focus();}
 scene.addEventListener('click',e=>{

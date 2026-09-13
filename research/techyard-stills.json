@@ -1,0 +1,97 @@
+{
+  "method": "Actual frames extracted with ffmpeg from original public video streams observed in Instagram pageAssets. No generated elements, retouching, cropping, or UI overlays. Source video text remains where present.",
+  "verified_date": "2026-09-13",
+  "sources": [
+    {
+      "post_id": "C4hy0hQP6Td",
+      "source_url": "https://www.instagram.com/p/C4hy0hQP6Td/?hl=en",
+      "post_date": "2024-03-15",
+      "visible_author": "techyardsg",
+      "caption_excerpt": "TECHYARD HAS LANDED AT IT SHOW 2024!",
+      "caption_summary": "TECHYARD first IT Show, booth 8135 beside Aftershock at Suntec Convention Centre, 14–17 March 2024.",
+      "stills": [
+        {
+          "path": "dist/assets/it-show-techyard-booth.jpg",
+          "timestamp_seconds": 0.8,
+          "width": 1080,
+          "height": 1920,
+          "description": "TECHYARD booth logo, host and illuminated PC component display."
+        }
+      ]
+    },
+    {
+      "post_id": "C4h5j6NvI8A",
+      "source_url": "https://www.instagram.com/p/C4h5j6NvI8A/?hl=en",
+      "post_date": "2024-03-15",
+      "visible_author": "techyardsg",
+      "caption_excerpt": "THIS IS OUR FIRST IT SHOW!!",
+      "caption_summary": "TECHYARD first IT Show; monitor, laptop, storage and gaming gear deals at its booth.",
+      "stills": [
+        {
+          "path": "dist/assets/it-show-monitor-counter.jpg",
+          "timestamp_seconds": 27.2,
+          "width": 464,
+          "height": 824,
+          "description": "Front of TECHYARD monitor counter on the IT Show floor.",
+          "note": "Best observed video stream is 464 × 824. Original burned-in video captions remain."
+        }
+      ]
+    },
+    {
+      "post_id": "C4dPy2bSnLz",
+      "source_url": "https://www.instagram.com/p/C4dPy2bSnLz/?hl=en",
+      "post_date": "2024-03-13",
+      "visible_author": "aftershockpc and techyardsg",
+      "caption_excerpt": "Behind-the-scenes building the BIGGEST booth at IT SHOW 2024!",
+      "caption_summary": "Behind-the-scenes booth setup; 14–17 March, 12 PM–9 PM; Suntec Convention Centre, Level 4, Booth 8135.",
+      "stills": [
+        {
+          "path": "dist/assets/it-show-booth-build.jpg",
+          "timestamp_seconds": 0.8,
+          "width": 720,
+          "height": 1280,
+          "description": "Aftershock-branded shared exhibition booth during setup.",
+          "note": "Do not describe the visible Aftershock logo as a TECHYARD logo. Original video headline remains."
+        }
+      ]
+    },
+    {
+      "post_id": "CzaYTvix3z8",
+      "source_url": "https://www.instagram.com/p/CzaYTvix3z8/?hl=en",
+      "post_date": "2023-11-09",
+      "visible_author": "ryanxgo and 2 others (techyardsg avatar visible)",
+      "caption_excerpt": "CALLING ALL GAMERS OUT HERE",
+      "caption_summary": "TECHYARD and Aftershock sale at Aftershock showroom, Suntec; 3 Temasek Blvd, #02-328, Singapore 038983.",
+      "stills": [
+        {
+          "path": "dist/assets/showroom-display-wall-2023.jpg",
+          "timestamp_seconds": 34.5,
+          "width": 720,
+          "height": 1280,
+          "description": "Illuminated TECHYARD showroom shelves for mouse, headset and keyboard products.",
+          "note": "Post is from 2023. Source video calls the space a pop-up shop in the Aftershock showroom."
+        }
+      ]
+    },
+    {
+      "post_id": "C5hj6KYSgjY",
+      "source_url": "https://www.instagram.com/p/C5hj6KYSgjY/?hl=en",
+      "post_date": "2024-04-08",
+      "visible_author": "techyardsg",
+      "caption_excerpt": "Want to try our products or can't wait to get them?",
+      "caption_summary": "Restocked TECHYARD showroom at Suntec City; try products and purchase in store or online. Address: 3 Temasek Blvd, #02-328 / 329, Singapore 038983.",
+      "stills": [
+        {
+          "path": "dist/assets/showroom-overview-2024.jpg",
+          "timestamp_seconds": 0.2,
+          "width": 720,
+          "height": 1280,
+          "description": "TECHYARD branded counters and illuminated showroom shelving, with a presenter.",
+          "note": "No visible burned-in subtitle in this selected frame."
+        }
+      ]
+    }
+  ],
+  "missing_or_blocked": [],
+  "evidence": "Each source has POST_ID-evidence.txt (rendered page accessibility text) and POST_ID-assets.json (observed assets inventory). Original streams are POST_ID.mp4."
+}

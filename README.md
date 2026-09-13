@@ -1,6 +1,6 @@
 # ZX — Personal Portfolio
 
-Light monochrome portfolio with fixed slides, soft translucent panels, DIN / Helvetica Neue typography, an ordered round-dot orbital mesh, a pan/zoom global view, and a seven-film sequence. Navigation relationships are implied by placement; no connector lines are drawn.
+Light monochrome portfolio with fixed slides, soft translucent panels, DIN / Helvetica Neue typography, a faint random-grain wave mesh with a quiet centre, a pan/zoom global view, and a seven-film sequence. Category slides use wide, loosely arranged cards. Hover or keyboard focus expands a card while nearby cards shift aside. Navigation relationships are implied by placement; no connector lines are drawn.
 
 ## Edit the content
 
@@ -18,7 +18,7 @@ Serve `dist` with any static HTTP server. The site has no build or package depen
 
 ## Content status
 
-All requested pages exist. Flour, Ideate Hackathon, NUS COOP and law-firm photos need identification/supply. Vision and History remain writing spaces. The two 2024 TECHYARD spatial-design photo slots await exact Instagram posts; Instagram required login to reach that archive. Unmatched gallery assets are retained under `dist/assets`; their original filenames are recorded in `gallery.json`. Originals in Downloads were not altered.
+All requested pages exist. Flour, Ideate Hackathon, NUS COOP and law-firm photos need identification/supply. Vision and History remain writing spaces. Unmatched gallery assets are retained under `dist/assets`; their original filenames are recorded in `gallery.json`. Originals in Downloads were not altered.
 
 ## Sources
 
@@ -28,8 +28,9 @@ All requested pages exist. Flour, Ideate Hackathon, NUS COOP and law-firm photos
 - Channel counts: https://www.youtube.com/@ZXTech/about, checked 13 Sep 2026, 20:39 SGT. 20.2K subscribers (public rounded count), 4,793,306 views, 575 videos. Saved in `research/channel-stats.json`.
 - M1 Pro mouse/dock: https://aftershockpc.com/products/as-m1pro-wh. Official transparent asset https://cdn.shopify.com/s/files/1/0637/0407/2436/files/m1pro-whitehighres.png?v=1733976774. No newer named revision was verified.
 - Griffin Labs company imagery: https://griffinlabs.ai/t1 and https://griffinlabs.ai/t1/t1-cover.webp. This is company context; it does not imply Zac designed the pictured T1.
+- TECHYARD spatial-design stills: five user-selected Instagram videos, recorded in `research/techyard-stills.json`. IT Show posts are March 2024; showroom posts are November 2023 and April 2024. Real frames retain original video captions.
 - Career roles/dates and personal experience: user supplied. Content creation begins 2015; the channel's separate establishment date is not substituted.
 
 ## Checks
 
-Run `node checks/validate.mjs` for slide render, route, asset, typography and ordered-mesh checks. Use `node --check dist/app.js` and `node --check dist/mesh.js` for syntax.
+Run `node checks/validate.mjs` for slide render, route, asset, typography and random-wave mesh checks. Use `node --check dist/app.js` and `node --check dist/mesh.js` for syntax.

@@ -1,40 +1,35 @@
-// Ordered halftone orbital ribbon. The curved surface controls dot size and
-// alpha on a fixed screen, leaving the centre quiet for reading.
-const screen = [0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
-export function meshDots(width,height){
- const dots=[],step=8;
- for(let row=0,y=step/2;y<height;row++,y+=step){
-  for(let col=0,x=step/2;x<width;col++,x+=step){
-   const u=x/width-.5,v=y/height-.53;
-   const dx=u*.94+v*.34,dy=-u*.34+v*.94;
-   const angle=Math.atan2(dy/.51,dx/.64);
-   const radius=Math.hypot(dx/.64,dy/.51);
-   const contour=.93+.065*Math.sin(angle*2-.6);
-   const band=(radius-contour)/.19;
-   if(Math.abs(band)>=1)continue;
-   const surface=Math.sqrt(1-band*band);
-   const lighting=.62+.38*(.5+.5*Math.sin(angle-1.1));
-   const quietCentre=1-Math.exp(-Math.pow(u/.32,4)-Math.pow(v/.29,4));
-   const intensity=surface*lighting*quietCentre;
-   const level=intensity*5,threshold=(screen[(row%4)*4+col%4]+.5)/16;
-   const quantized=Math.floor(level)+(level%1>threshold?1:0);
-   if(!quantized)continue;
-   dots.push({x,y,r:.3+quantized*.33,alpha:.075+intensity*.13});
+// Fine stochastic grain follows two broad waves. A clear centre and low
+// contrast keep the texture behind the text; the seed stays fixed per visit.
+export function meshPixels(width,height,seed=19){
+ const pixels=new Uint8ClampedArray(width*height*4);let state=seed>>>0;
+ const random=()=>{state+=0x6D2B79F5;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};
+ const phase=(seed%1000)/1000*.28,columns=[];
+ for(let x=0;x<width;x++){
+  const u=x/width;
+  columns.push({a:.01+.34*u+.13*Math.sin(u*5.2+phase),b:.93-.19*Math.sin(u*4.5+phase)-.08*u,quietX:Math.pow((u-.5)/.36,4)});
+ }
+ for(let y=0;y<height;y++){
+  const v=y/height,quietY=Math.pow((v-.51)/.29,4);
+  for(let x=0;x<width;x++){
+   const column=columns[x],a=(v-column.a)/.13,b=(v-column.b)/.16;
+   const waveA=Math.exp(-a*a*1.65),waveB=Math.exp(-b*b*1.8);
+   const clearCentre=1-.95*Math.exp(-column.quietX-quietY);
+   const density=(waveA*.25+waveB*.21)*clearCentre;
+   if(random()>=density)continue;
+   const i=(y*width+x)*4,grey=118+Math.floor(random()*35);
+   pixels[i]=grey;pixels[i+1]=grey;pixels[i+2]=grey;
+   pixels[i+3]=Math.round((.14+random()*.22)*255*clearCentre);
   }
  }
- return dots;
+ return pixels;
 }
 export function mountMesh(canvas){
- let timer;
+ const seed=crypto.getRandomValues(new Uint32Array(1))[0];let timer;
  const draw=()=>{
-  const box=canvas.getBoundingClientRect(),ratio=Math.min(devicePixelRatio||1,2);
-  canvas.width=Math.max(1,Math.round(box.width*ratio));
-  canvas.height=Math.max(1,Math.round(box.height*ratio));
-  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);
-  for(const dot of meshDots(box.width,box.height)){
-   ctx.beginPath();ctx.arc(dot.x,dot.y,dot.r,0,Math.PI*2);
-   ctx.fillStyle=`rgba(55,55,55,${dot.alpha})`;ctx.fill();
-  }
+  const box=canvas.getBoundingClientRect(),scale=Math.min(1.25,1600/box.width);
+  const w=Math.max(1,Math.round(box.width*scale)),h=Math.max(1,Math.round(box.height*scale));
+  canvas.width=w;canvas.height=h;
+  canvas.getContext('2d').putImageData(new ImageData(meshPixels(w,h,seed),w,h),0,0);
  };
  draw();const observer=new ResizeObserver(()=>{clearTimeout(timer);timer=setTimeout(draw,120);});
  observer.observe(canvas);return draw;
