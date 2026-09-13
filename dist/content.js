@@ -1,0 +1,41 @@
+// Edit text, captions and image lists here. Empty strings render the write-up placeholders.
+// Dates and roles are supplied by Zac. Public channel counts are a dated snapshot.
+const g=n=>`assets/gallery-${String(n).padStart(2,'0')}.jpg`;
+export const pages={
+  about:{title:'About Me',sub:'The person behind the work',parent:'home',kind:'about',image:'assets/portrait.jpg',body:'',children:['vision','extra','history']},
+  vision:{title:'Vision',sub:'Where I want to go',parent:'about',body:'',prompts:['My vision','What I want to change','The future I’m working towards']},
+  extra:{title:'Extra-curricular Exploration',sub:'Following my curiosity',parent:'about',body:'',images:[g(14),g(23),g(24)],captions:['Exploration beyond the studio','Imperial College experience','A shared experience'],prompts:['What I explored','People & experiences','What I took away']},
+  history:{title:'History',sub:'The story so far',parent:'about',body:'',prompts:['Where it began','Defining moments','What comes next']},
+  career:{title:'Career Experience',sub:'Learning by doing',parent:'home',kind:'branch',children:['law','techyard-career','creator-career','griffin']},
+  law:{title:'Intern at Law Firm',sub:'2019',parent:'career',body:'',prompts:['The firm & my role','What I worked on','What I learned'],mediaPlaceholder:'Law firm photo'},
+  'techyard-career':{title:'Head of TECHYARD',sub:'AftershockPC / 2023–2024',parent:'career',images:[g(2),g(17)],captions:['TECHYARD storefront · supplied screenshot, Sep 2026','TECHYARD sales dashboard · supplied archive'],body:'',prompts:['My role','Building the business','Impact & lessons'],related:'techyard'},
+  'creator-career':{title:'Content Creation',sub:'ZXTECH / 2015–Present',parent:'career',images:['assets/portrait.jpg',g(5)],captions:['At the ZXTECH studio','Testing & filming'],body:'',prompts:['A decade of creating','My process','What I’m building next'],related:'content'},
+  griffin:{title:'Mechanical Design Engineer Intern',sub:'Griffin Labs / 2026–Present',parent:'career',images:['assets/griffin-t1-cover.webp'],captions:['LionsBot T1 · official Griffin Labs company imagery'],body:'',prompts:['My role at Griffin Labs','Engineering challenges','Progress & learning'],related:'robot'},
+  design:{title:'Design Projects',sub:'From possibility to reality',parent:'home',kind:'branch',children:['exploration','experimentation','execution']},
+  exploration:{title:'Exploration',sub:'Discovering Directions',parent:'design',kind:'branch',children:['foam','flour','cardboard','automotive']},
+  experimentation:{title:'Experimentation',sub:'Testing Ideas',parent:'design',kind:'branch',children:['ideate','apple','nothing','coop']},
+  execution:{title:'Execution',sub:'Bringing to life',parent:'design',kind:'branch',children:['robot','mouse','techyard']},
+  foam:{title:'Form Exploration with Foam',sub:'Exploration / Form & material',parent:'exploration',images:[g(8),g(12),g(11)],captions:['Foam form studies','A family of forms','Exploration in the workshop'],body:'',prompts:['The starting point','Process & discoveries','Reflections']},
+  flour:{title:'Exploring Process with Flour',sub:'Exploration / Material & process',parent:'exploration',mediaPlaceholder:'Flour process images',body:'',prompts:['The question','Material experiments','What the process revealed']},
+  cardboard:{title:'Building Furniture from Cardboard',sub:'Exploration / Structure & making',parent:'exploration',images:[g(19),g(22),g(9),g(13),g(6),g(27)],captions:['The finished display','Structure study','Form in use','Making & assembly','Prototyping details','Working at full scale'],body:'',prompts:['The brief','Structure & assembly','What I learned']},
+  automotive:{title:'Self Learning Automotive Design',sub:'Exploration / Drawing & proportion',parent:'exploration',images:[g(10),g(21)],captions:['Automotive sketch studies','Exploring front-end proportions'],body:'',prompts:['Why automotive design','Practice & process','How my thinking evolved'],related:'video-ferrari'},
+  ideate:{title:'Ideate Hackathon',sub:'Experimentation / Ideas under pressure',parent:'experimentation',mediaPlaceholder:'Hackathon photos',body:'',prompts:['The challenge','Our idea & my contribution','Outcome & learning']},
+  apple:{title:'Apple Spatial Computing Hackathon',sub:'Experimentation / Spatial possibilities',parent:'experimentation',images:[g(1)],captions:['At the Apple Developer Center'],body:'',prompts:['The opportunity','What we built','My contribution & takeaways']},
+  nothing:{title:'Nothing Headphones Design',sub:'Experimentation / Rethinking a product',parent:'experimentation',images:['assets/nothing-redesign.jpg','assets/3YhAbudHrrY.jpg'],captions:['Nothing headphone redesign','The 24-hour design challenge'],body:'',prompts:['The problem I saw','Design choices','The final concept'],related:'video-headphones'},
+  coop:{title:'NUS COOP Store Redesign',sub:'Experimentation / Space & experience',parent:'experimentation',mediaPlaceholder:'Store redesign images',body:'',prompts:['The existing experience','The proposed redesign','My role & reflections']},
+  robot:{title:'Designing an AI Robot',sub:'Execution / Work in progress',status:'IN PROGRESS',parent:'execution',images:[g(16),g(4),g(3),g(7),g(15),g(18),g(26),g(29)],captions:['Robot concept render','Mechanical development in CAD','Initial concept sketches','Exploring the robot’s form','Mechanism studies','Body proportions','Developing the concept','Early sketch study'],body:'',prompts:['The ambition','Design & engineering','Current progress']},
+  mouse:{title:'Aftershock M1 Pro',sub:'Execution / Design Overseer',parent:'execution',images:['assets/m1pro-white.png'],captions:['Aftershock M1 Pro with wireless charging dock · official product image'],body:'',prompts:['My role as Design Overseer','Ergonomics & design decisions','From development to product'],source:{title:'View the M1 Pro',url:'https://aftershockpc.com/products/as-m1pro-wh'}},
+  techyard:{title:'TECHYARD',sub:'Execution / Building a retail experience',parent:'execution',images:[g(2),g(17)],captions:['TECHYARD storefront · supplied screenshot, Sep 2026','Sales dashboard · supplied archive; period not specified'],body:'',prompts:['The opportunity','What I built & oversaw','Results & reflections'],source:{title:'Visit TECHYARD',url:'https://thetechyard.com'},related:'techyard-career'},
+  content:{title:'Content Creation',sub:'ZXTECH / 2015–Present',parent:'home',kind:'content',body:'Bring the future to the people.\n\nDesign, testing, and technology made clearer. A decade of explaining, filming, testing, and listening—shaped by industrial design at NUS and experience leading TECHYARD.',children:['video-headphones']},
+};
+export const videos=[
+ {slug:'video-headphones',id:'3YhAbudHrrY',title:'Can I REDESIGN these Headphones in 24 Hours?',short:'Headphones, redesigned',sub:'Putting My Vision to work',year:'2026'},
+ {slug:'video-m5',id:'loZy-QCMK-s',title:'Is the $10000 128GB M5 MAX EVEN GOOD FOR AI? TESTED',short:'M5 Max · AI deep dive',sub:'Understanding the Future',year:'2026'},
+ {slug:'video-comparison',id:'Md6_u2U0LwY',title:'$10000 APPLE OR NVIDIA for AI? M5 MAX vs SPARK GB10 vs 5090!',short:'Spark × M5 Max × 5090',sub:'Understanding the Future',year:'2026'},
+ {slug:'video-camera',id:'kMttoTh-v1Q',title:'This Camera has a SPLIT Personality.',short:'A camera with two sides',sub:'Exploring the tools of storytelling',year:'2026'},
+ {slug:'video-ferrari',id:'MrQ6jIAiUgc',title:'Ferrari was Right.',short:'Ferrari was right',sub:'Putting My Vision to work',year:'2026'},
+ {slug:'video-monitor',id:'CPUf1Oziajg',title:'the Literal Best 27" Gaming Monitor money can buy.',short:'The monitor, measured',sub:'Performance Analysis',year:'2025'},
+ {slug:'video-mouse',id:'5xUvhU2ClN8',title:'the Most Insane Gaming Mouse design you actually should buy. Lofree Hypace review',short:'Lofree Hypace, examined',sub:'Ergonomic Analysis',year:'2025'}
+];
+videos.forEach((v,i)=>pages[v.slug]={...v,parent:i?videos[i-1].slug:'content',kind:'video',index:i,children:i<videos.length-1?[videos[i+1].slug]:[],body:''});
+export const channel={subscribers:'20.2K',views:'4,793,306',videos:'575',experience:'10+',checked:'13 Sep 2026',url:'https://www.youtube.com/@ZXTech/about'};

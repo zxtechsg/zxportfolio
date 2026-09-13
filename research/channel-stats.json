@@ -1,0 +1,19 @@
+{
+  "subscriberCountText": "20.2k subscribers",
+  "viewCountText": "4,793,306 views",
+  "videoCountText": "575 videos",
+  "joinedDateText": {
+    "content": "Joined 6 Dec 2016",
+    "styleRuns": [
+      {
+        "startIndex": 0,
+        "length": 17
+      }
+    ]
+  },
+  "snapshotUTC": "2026-09-13T12:39:02Z",
+  "snapshotSGT": "13 Sep 2026, 20:39 SGT",
+  "source": "https://www.youtube.com/@ZXTech/about",
+  "channelId": "UCtBXoKb9-ICWvwrCSg2aQdw",
+  "note": "Subscriber count is the rounded public display."
+}
