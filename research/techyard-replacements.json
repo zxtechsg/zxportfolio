@@ -1,0 +1,68 @@
+{
+  "career_cover": {
+    "path": "dist/assets/techyard-career-cover.webp",
+    "jpeg_path": "/tmp/zx-techyard-cover/techyard-career-cover.jpg",
+    "source_url": "https://www.instagram.com/p/C1bYnDTyWVd/?hl=en",
+    "canonical_source_url": "https://www.instagram.com/aftershockpc/reel/C1bYnDTyWVd/",
+    "visible_author": "aftershockpc",
+    "post_date_displayed_in_instagram_page_metadata": "2023-12-28",
+    "media_upload_date_utc": "2023-12-29",
+    "media_timestamp_utc": "2023-12-29T07:04:37Z",
+    "date_note": "Instagram public page description says December 28, 2023; native media timestamp is December 29 in UTC. Preserve displayed date or use 2023; do not silently treat both as identical.",
+    "frame_timestamp_seconds": 54.2,
+    "width": 720,
+    "height": 1280,
+    "visual_rationale": "Presenter has a clear, animated expression while holding the motherboard diagonally. Dark background and centered subject support portrait cropping on the left 39% of the wide career card.",
+    "suggested_object_position": "50% 42%",
+    "original_burned_in_caption": "or get it",
+    "source_video": "/tmp/zx-techyard-cover/C1bYnDTyWVd.mp4",
+    "method": "Actual frame extracted with ffmpeg from native public Instagram video downloaded through yt-dlp. No retouching or generated pixels. WebP optimization only.",
+    "optimized_bytes": 45044
+  },
+  "showroom_photos": [
+    {
+      "path": "dist/assets/showroom-display-wall.webp",
+      "original_path": "/tmp/zx-techyard-cover/techyard-pop-up-display-.jpg",
+      "source_image_url": "https://thesmartlocal.com/wp-content/uploads/2023/12/techyard-pop-up-display-.jpg",
+      "description": "Full illuminated product display wall with category signage, shopper and TECHYARD demo counter.",
+      "recommended_use": "First showroom gallery image; strongest overview of spatial layout.",
+      "width": 1000,
+      "height": 667,
+      "source_article_url": "https://thesmartlocal.com/read/techyard-aftershock-pc-pop-up/",
+      "article_date": "2023-12-12",
+      "credit": "Shawn Low / TheSmartLocal",
+      "original_watermark_preserved": true,
+      "optimized_bytes": 105558
+    },
+    {
+      "path": "dist/assets/showroom-component-wall.webp",
+      "original_path": "/tmp/zx-techyard-cover/techyard-pop-up-deals.jpg",
+      "source_image_url": "https://thesmartlocal.com/wp-content/uploads/2023/12/techyard-pop-up-deals.jpg",
+      "description": "White brick component wall with lit shelves and two vertical TECHYARD digital screens.",
+      "recommended_use": "Second showroom gallery image; clear view of wall, shelving and signage.",
+      "width": 1000,
+      "height": 667,
+      "source_article_url": "https://thesmartlocal.com/read/techyard-aftershock-pc-pop-up/",
+      "article_date": "2023-12-12",
+      "credit": "Shawn Low / TheSmartLocal",
+      "original_watermark_preserved": true,
+      "optimized_bytes": 91218
+    },
+    {
+      "path": "dist/assets/showroom-demo-station.webp",
+      "original_path": "/tmp/zx-techyard-cover/techyard-pop-up-setup.jpg",
+      "source_image_url": "https://thesmartlocal.com/wp-content/uploads/2023/12/techyard-pop-up-setup.jpg",
+      "description": "Working gaming demo station with monitor, keyboard and pink water-cooled PC.",
+      "recommended_use": "Optional third showroom gallery image; shows product trial setup.",
+      "width": 1000,
+      "height": 667,
+      "source_article_url": "https://thesmartlocal.com/read/techyard-aftershock-pc-pop-up/",
+      "article_date": "2023-12-12",
+      "credit": "Shawn Low / TheSmartLocal",
+      "original_watermark_preserved": true,
+      "optimized_bytes": 80546
+    }
+  ],
+  "scope_note": "Replace only the two old showroom IG gallery stills with these article photos; do not replace IT Show gallery stills.",
+  "missing_or_blocked": []
+}

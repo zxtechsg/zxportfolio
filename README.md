@@ -1,6 +1,6 @@
 # ZX — Personal Portfolio
 
-Light monochrome portfolio with fixed slides, soft translucent panels, DIN / Helvetica Neue typography, a faint random-grain wave mesh with a quiet centre, a pan/zoom global view, and a seven-film sequence. Category slides use wide, loosely arranged cards. Hover or keyboard focus expands a card while nearby cards shift aside. Navigation relationships are implied by placement; no connector lines are drawn.
+Light monochrome portfolio with fixed slides, soft translucent panels, DIN / Helvetica Neue typography, a darker random-dither cloth mesh that reshapes during navigation, with a quiet centre, reduced-motion support and a static canvas fallback, a pan/zoom global view, and a seven-film sequence. Category slides use wide, level cards with uneven spacing. Hover or keyboard focus expands a card while nearby cards shift aside. Navigation relationships are implied by placement; no connector lines are drawn.
 
 ## Edit the content
 
@@ -28,7 +28,7 @@ All requested pages exist. Flour, Ideate Hackathon, NUS COOP and law-firm photos
 - Channel counts: https://www.youtube.com/@ZXTech/about, checked 13 Sep 2026, 20:39 SGT. 20.2K subscribers (public rounded count), 4,793,306 views, 575 videos. Saved in `research/channel-stats.json`.
 - M1 Pro mouse/dock: https://aftershockpc.com/products/as-m1pro-wh. Official transparent asset https://cdn.shopify.com/s/files/1/0637/0407/2436/files/m1pro-whitehighres.png?v=1733976774. No newer named revision was verified.
 - Griffin Labs company imagery: https://griffinlabs.ai/t1 and https://griffinlabs.ai/t1/t1-cover.webp. This is company context; it does not imply Zac designed the pictured T1.
-- TECHYARD spatial-design stills: five user-selected Instagram videos, recorded in `research/techyard-stills.json`. IT Show posts are March 2024; showroom posts are November 2023 and April 2024. Real frames retain original video captions.
+- TECHYARD: IT Show frames from three March 2024 Instagram videos (`research/techyard-stills.json`). The career cover uses the user-selected Aftershock video C1bYnDTyWVd at 54.2s. Showroom gallery images now come from TheSmartLocal’s 12 Dec 2023 article, credited to Shawn Low / TheSmartLocal; watermarks are retained. Sources are in `research/techyard-replacements.json`. The earlier showroom video stills are no longer displayed.
 - Career roles/dates and personal experience: user supplied. Content creation begins 2015; the channel's separate establishment date is not substituted.
 
 ## Checks
