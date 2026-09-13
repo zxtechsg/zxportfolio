@@ -1,0 +1,29 @@
+{
+  "figures_source": "Zac, user instruction on 13 Sep 2026",
+  "monthly_revenue": {
+    "from": 0,
+    "to": 250000,
+    "display": "$250K / month"
+  },
+  "users": {
+    "from": 0,
+    "to": 10000
+  },
+  "currency": "Dollar symbol as supplied; not inferred",
+  "period": "Not specified for the metrics",
+  "instagram_profile": "https://www.instagram.com/techyardsg/",
+  "profile_verified_from": "https://thetechyard.com/",
+  "pending_photos": [
+    {
+      "title": "Designed Showroom at Suntec",
+      "subtitle": "Showroom Spatial Design",
+      "year": 2024
+    },
+    {
+      "title": "TECHYARD\u2019s first IT Show booth",
+      "subtitle": "Show Booth Spatial Design",
+      "year": 2024
+    }
+  ],
+  "archive_access": "Instagram required login to browse past February 2026; exact 2024 posts requested from user."
+}

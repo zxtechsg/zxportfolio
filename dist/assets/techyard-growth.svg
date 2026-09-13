@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+<title id="title">TECHYARD — Built from zero</title><desc id="desc">Grew monthly revenue from zero to $250,000 and users from zero to 10,000. Figures supplied by Zac.</desc>
+<defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.1" fill="#222" opacity=".13"/></pattern><linearGradient id="fade"><stop stop-color="white" stop-opacity="0"/><stop offset="1" stop-color="white"/></linearGradient><mask id="corner"><rect width="1200" height="840" fill="url(#fade)"/></mask></defs>
+<rect width="1200" height="840" rx="4" fill="#eeeeec"/>
+<path d="M890 0h310v280C1110 185 1015 75 890 0" fill="url(#dots)"/>
+<g font-family="DIN Alternate,Bahnschrift,Arial,sans-serif" fill="#606060" font-size="17" letter-spacing="1.4"><text x="72" y="76">TECHYARD / GROWTH</text><text x="1066" y="76">ZX</text></g>
+<text x="68" y="168" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="64" font-weight="500" letter-spacing="-3.8" fill="#161616">Built from zero.</text>
+<g font-family="DIN Alternate,Bahnschrift,Arial,sans-serif" font-size="18" fill="#666" letter-spacing="1.1"><text x="72" y="254">01 / MONTHLY REVENUE</text><text x="72" y="530">02 / USERS</text></g>
+<g font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="92" font-weight="400" letter-spacing="-5" fill="#999"><text x="72" y="363">0</text><text x="72" y="639">0</text></g>
+<g stroke="#777" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M180 333h65m-13-13 13 13-13 13M180 609h65m-13-13 13 13-13 13"/></g>
+<g font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="112" font-weight="500" letter-spacing="-6" fill="#171717"><text x="292" y="369">$250K<tspan font-size="32" letter-spacing="-1" dx="13">/ month</tspan></text><text x="292" y="645">10,000</text></g>
+<g fill="#252525"><rect x="72" y="407" width="1056" height="5" rx="2.5"/><rect x="72" y="683" width="1056" height="5" rx="2.5"/></g>
+<g font-family="DIN Alternate,Bahnschrift,Arial,sans-serif" font-size="15" fill="#777" letter-spacing=".4"><text x="72" y="773">BUSINESS DEVELOPMENT / COMMUNITY GROWTH</text></g>
+</svg>
