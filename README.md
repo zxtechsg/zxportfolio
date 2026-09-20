@@ -27,7 +27,8 @@ All requested pages exist. Flour, Ideate Hackathon, NUS COOP and law-firm photos
 - YouTube titles/thumbnails: official video pages, recorded in `research/videos.json`.
 - Channel counts: https://www.youtube.com/@ZXTech/about, checked 13 Sep 2026, 20:39 SGT. 20.2K subscribers (public rounded count), 4,793,306 views, 575 videos. Saved in `research/channel-stats.json`.
 - M1 Pro mouse/dock: https://aftershockpc.com/products/as-m1pro-wh. Official transparent asset https://cdn.shopify.com/s/files/1/0637/0407/2436/files/m1pro-whitehighres.png?v=1733976774. No newer named revision was verified.
-- Griffin Labs company imagery: https://griffinlabs.ai/t1 and https://griffinlabs.ai/t1/t1-cover.webp. This is company context; it does not imply Zac designed the pictured T1.
+- Griffin page now uses the public Griffin Labs wordmark and a LionsBot Singapore factory photograph. Sources and credits are recorded in `research/griffin-public-images.json`; neither image represents the NDA project.
+- Flour project: user-supplied process photograph and the user-linked YouTube process film (`78ZCLYIE9gE`).
 - TECHYARD: IT Show frames from three March 2024 Instagram videos (`research/techyard-stills.json`). The career cover uses the user-selected Aftershock video C1bYnDTyWVd at 54.2s. Showroom gallery images now come from TheSmartLocal’s 12 Dec 2023 article, credited to Shawn Low / TheSmartLocal; watermarks are retained. Sources are in `research/techyard-replacements.json`. The earlier showroom video stills are no longer displayed.
 - Career roles/dates and personal experience: user supplied. Content creation begins 2015; the channel's separate establishment date is not substituted.
 

@@ -1,0 +1,56 @@
+{
+  "checked_on": "2026-09-20",
+  "scope": "Official public brand/factory context for Griffin Labs role gallery. No T1 mall image; no implication that portfolio owner worked on pictured products or attended event.",
+  "recommended_gallery": [
+    "griffin-wordmark.svg",
+    "lionsbot-robots.jpg"
+  ],
+  "assets": [
+    {
+      "brand": "Griffin Labs",
+      "kind": "official inline wordmark",
+      "source_page": "https://griffinlabs.ai/",
+      "image_url": null,
+      "source_selector": "svg[aria-label=\"Griffin Labs\"]",
+      "caption": "Griffin Labs · public brand identity",
+      "alt": "Griffin Labs wordmark",
+      "attribution": "Griffin Labs",
+      "transformations": "Extracted exact first inline SVG from official homepage. Paths and viewBox unmodified; currentColor resolves black as standalone SVG.",
+      "reuse": "Publicly accessible official wordmark; no open reuse licence located. No separate image URL exists for the inline SVG.",
+      "local_path": "/tmp/zx-griffin-public/griffin-wordmark.svg",
+      "bytes": 3935,
+      "sha256": "e275bd4330be8bebf94eea4faa13b8509f3c7c973117de27159def9180b8f80f",
+      "visually_checked": true,
+      "dimensions": {
+        "viewBox": "390 420 516 62"
+      }
+    },
+    {
+      "brand": "LionsBot",
+      "kind": "official public factory/product photo",
+      "source_page": "https://www.lionsbot.com/lionsbot-factory-opening-2024/",
+      "image_url": "https://www.lionsbot.com/wp-content/uploads/2024/04/DSC00317-Enhanced-NR.jpg",
+      "page_thumbnail_url": "https://www.lionsbot.com/wp-content/uploads/2024/04/DSC00317-Enhanced-NR-300x200.jpg",
+      "caption": "LionsBot R3 Scrub Pro and Rex robots at its Singapore factory.",
+      "alt": "LionsBot cleaning robots lined up beside branded crates inside its factory",
+      "attribution": "Photo: LionsBot International Pte Ltd.",
+      "dimensions": {
+        "width": 1600,
+        "height": 1066
+      },
+      "transformations": "Proportional resize from 5435 x 3623 to 1600 x 1066; JPEG quality 82. No crop, colour change, or watermark removal.",
+      "reuse": "Official public news image. Source footer: © LionsBot International Pte Ltd. All Rights Reserved. Public availability does not establish a reuse licence.",
+      "rights_source": "https://www.lionsbot.com/lionsbot-factory-opening-2024/",
+      "local_path": "/tmp/zx-griffin-public/lionsbot-robots.jpg",
+      "bytes": 435527,
+      "sha256": "e52ebd6e0cfeb00e589e001c2c565af8d47c6c92915d615f9dab61f95cb406e5",
+      "visually_checked": true
+    }
+  ],
+  "qa": "All selected assets visually inspected. Logos preserved. Both photos full colour and uncropped. Render with object-fit: contain; allow whitespace around Griffin wordmark/logo.",
+  "notes": [
+    "No suitable Griffin Labs team/lab still photo found on official home/about pages; brand emblem avoids depicting unrelated confidential project work.",
+    "About page identifies Griffin Labs as originating within LionsBot; the homepage calls it the embodied AI research arm of LionsBot."
+  ],
+  "selected_file_count": 2
+}
